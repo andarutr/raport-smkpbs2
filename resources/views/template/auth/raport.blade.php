@@ -3,6 +3,16 @@
 @section('title', 'E-Raport')
 
 @section('content')
+@if(session('failed'))
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script>
+Swal.fire(
+  'Status Pembayaran',
+  '{{ session('failed') }}',
+  'info'
+)
+</script>
+@endif
 <div id="auth">
     <div class="container">
         <div class="row">
@@ -13,11 +23,12 @@
                             <img src="{{ asset('assets/images/favicon.svg') }}" height="48" class='mb-4'>
                             <h3>E-RAPORT</h3>
                         </div>
-                        <form action="index.html">
+                        <form action="{{ route('check') }}" method="POST">
+                        @csrf
                             <div class="form-group position-relative has-icon-left">
-                                <label for="username">NISN</label>
+                                <label for="nisn">NISN</label>
                                 <div class="position-relative">
-                                    <input type="text" class="form-control" id="username" placeholder="Masukkan NISN">
+                                    <input type="text" class="form-control" name="nisn" id="nisn" placeholder="Masukkan NISN" required>
                                     <div class="form-control-icon">
                                         <i data-feather="user"></i>
                                     </div>

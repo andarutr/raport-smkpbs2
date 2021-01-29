@@ -1,12 +1,12 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => 'v7.30.1',
-    'version' => '7.30.1.0',
+    'pretty_version' => 'dev-main',
+    'version' => 'dev-main',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => '54671dd461a6347e6c480984a61ba2c452e79ab4',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -159,6 +159,15 @@
       array (
       ),
       'reference' => '01de0fe5f71c70d1930ee9a80385f9cc28e0f63a',
+    ),
+    'goodnesskay/laravelpdfviewer' => 
+    array (
+      'pretty_version' => 'v1.0',
+      'version' => '1.0.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'f0808b98aab3c3dc080847e22ee7cc614bb6ed19',
     ),
     'guzzlehttp/guzzle' => 
     array (
@@ -417,12 +426,12 @@
     ),
     'laravel/laravel' => 
     array (
-      'pretty_version' => 'v7.30.1',
-      'version' => '7.30.1.0',
+      'pretty_version' => 'dev-main',
+      'version' => 'dev-main',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => '54671dd461a6347e6c480984a61ba2c452e79ab4',
     ),
     'laravel/tinker' => 
     array (
@@ -721,8 +730,8 @@
     array (
       'provided' => 
       array (
-        0 => '1.0',
-        1 => '1.0.0',
+        0 => '1.0.0',
+        1 => '1.0',
       ),
     ),
     'psr/simple-cache' => 

@@ -14,3 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'RaportController@index');
+Route::post('/check', 'RaportController@check')->name('check');
+
+Route::get('/raport/{nisn}', 'RaportController@show');
