@@ -17,3 +17,8 @@ Route::get('/', 'RaportController@index');
 Route::post('/check', 'RaportController@check')->name('check');
 
 Route::get('/raport/{nisn}', 'RaportController@show');
+
+Route::get('/login', 'Auth\\AuthController@index');
+Route::post('/login', 'Auth\\AuthController@login')->name('login.process');
+
+Route::get('/panel/admin/dashboard', 'Admin\\AdminController@index')->name('admin.dashboard');
