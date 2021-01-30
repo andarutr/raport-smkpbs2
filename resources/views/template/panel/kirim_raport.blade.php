@@ -51,47 +51,22 @@ Swal.fire(
                                             <td>{{ $rap->name }}</td>
                                             <td>{{ $rap->nisn }}</td>
                                             <td>{{ $rap->classroom }}</td>
-                                            @if($rap->status == 'Sudah Bayar')
-                                            <td style="color: green;"><b>{{ $rap->status }}</b></td>
-                                            @else
-                                            <td style="color: red;"><b>{{ $rap->status }}</b></td>
-                                            @endif
                                             <td>
-                                                @if(isset($rap->raport))
-                                                    Sudah Upload
+                                                @if($rap->status == 'Sudah Bayar')
+                                                <b class="text-success">{{ $rap->status }}</b>
                                                 @else
-                                                    Belum Upload
+                                                <b class="text-danger">{{ $rap->status }}</b>
                                                 @endif
                                             </td>
                                             <td>
-                                                <button type="button" class="btn btn-outline-primary block"
-                                                data-bs-toggle="modal" data-bs-target="#uploadModal"">Upload</button>
-                                                
-                                                {{-- Modal --}}
-                                                <div class="modal fade" id="uploadModal" tabindex="-1" role="dialog"
-                                                aria-labelledby="uploadModalTitle" aria-hidden="true">
-                                                <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable"
-                                                    role="document">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="uploadModalTitle">Upload Raport {{ $rap->name }}</h5>
-                                                            <button type="button" class="close" data-bs-dismiss="modal"
-                                                                aria-label="Close">
-                                                                <i data-feather="x"></i>
-                                                            </button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <form action="{{ route('admin.upload.raport', $rap->id) }}" method="POST" enctype="multipart/form-data">@csrf
-                                                                <div class="form-group">
-                                                                    <label for="upload">UPLOAD</label>
-                                                                    <input type="file" id="upload" class="form-control mt-4" name="raport">
-                                                                </div>
-                                                                <button type="submit" class="btn btn-primary mt-4 ml-1">Upload</button>
-                                                            </form>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                @if(isset($rap->raport))
+                                                <b class="text-success">Sudah Upload</b>
+                                                @else
+                                                <b class="text-danger">Belum Upload</b>
+                                                @endif
+                                            </td>
+                                            <td>
+                                                <a href="{{ route('admin.upload.raport', $rap->id) }}" class="btn btn-outline-primary block">Upload</a>
                                             </td>
                                         </tr>
                                         @endforeach

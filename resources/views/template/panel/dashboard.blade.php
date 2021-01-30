@@ -108,11 +108,13 @@ Swal.fire(
                                             <td>{{ $sw->name }}</td>
                                             <td>{{ $sw->nisn }}</td>
                                             <td>{{ $sw->classroom }}</td>
-                                            @if($sw->status == 'Sudah Bayar')
-                                            <td style="color: green;"><b>{{ $sw->status }}</b></td>
-                                            @else
-                                            <td style="color: red;"><b>{{ $sw->status }}</b></td>
-                                            @endif
+                                            <td>
+                                                @if($sw->status == 'Sudah Bayar')
+                                                <b class="text-success">{{ $sw->status }}</b>
+                                                @else
+                                                <b class="text-danger">{{ $sw->status }}</b>
+                                                @endif
+                                            </td>
                                             <td>{{ $sw->updated_at }}</td>
                                         </tr>
                                         @endforeach

@@ -88,6 +88,14 @@ class AdminController extends Controller
 
         return view('template.panel.kirim_raport', compact('menu','raport'));
     }
+
+    public function uploadRaport($id)
+    {
+        $menu = 'E-Raport';
+        $raport = Raport::where('id', $id)->first();
+
+        return view('template.panel.upload_raport', compact('menu','raport'));
+    }
     
     public function kirim_raport(Request $request, $id)
     {

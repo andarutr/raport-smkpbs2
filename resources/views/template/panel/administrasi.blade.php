@@ -50,17 +50,20 @@ Swal.fire(
                                             <td>{{ $rap->name }}</td>
                                             <td>{{ $rap->nisn }}</td>
                                             <td>{{ $rap->classroom }}</td>
-                                            @if($rap->status == 'Sudah Bayar')
-                                            <td style="color: green;"><b>{{ $rap->status }}</b></td>
-                                            @else
-                                            <td style="color: red;"><b>{{ $rap->status }}</b></td>
-                                            @endif
-
-                                            @if($rap->status == 'Sudah Bayar')
-                                            <td><a href="{{ route('admin.cancel.payment', $rap->id) }}" class="btn btn-danger" onclick="return confirm('Yakin ingin mengubah status menjadi Belum Bayar?')">Belum Bayar?</a></td>
-                                            @else
-                                            <td><a href="{{ route('admin.payment', $rap->id) }}" class="btn btn-success" onclick="return confirm('Yakin ingin mengubah status menjadi Sudah Bayar?')">Sudah Bayar?</a></td>
-                                            @endif
+                                            <td>
+                                                @if($rap->status == 'Sudah Bayar')
+                                                <b class="text-success">{{ $rap->status }}</b>
+                                                @else
+                                                <b class="text-danger">{{ $rap->status }}</b>
+                                                @endif
+                                            </td>
+                                            <td>
+                                                @if($rap->status == 'Sudah Bayar')
+                                                <a href="{{ route('admin.cancel.payment', $rap->id) }}" class="btn btn-danger" onclick="return confirm('Yakin ingin mengubah status menjadi Belum Bayar?')">Belum Bayar?</a>
+                                                @else
+                                                <a href="{{ route('admin.payment', $rap->id) }}" class="btn btn-success" onclick="return confirm('Yakin ingin mengubah status menjadi Sudah Bayar?')">Sudah Bayar?</a>
+                                                @endif
+                                            </td>
                                         </tr>
                                         @endforeach
                                     </tbody>

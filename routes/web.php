@@ -34,6 +34,7 @@ Route::middleware('auth')->group(function(){
         Route::post('/tambah-raport', 'Admin\\AdminController@tambah_raport')->name('admin.tambah_raport');
         Route::get('/kirim-raport', 'Admin\\AdminController@kirimRaport')->name('admin.kirim.raport');
         Route::get('/search-kirim-raport', 'Admin\\SearchController@kirimRaport')->name('admin.search.kirim.raport');
+        Route::get('/upload-raport/{id}', 'Admin\\AdminController@uploadRaport')->name('admin.view.upload');
         Route::post('/upload-raport/{id}', 'Admin\\AdminController@kirim_raport')->name('admin.upload.raport');
         Route::get('/logout', 'Auth\\AuthController@logout')->name('admin.logout');
     });
