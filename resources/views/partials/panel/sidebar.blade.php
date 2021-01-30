@@ -44,6 +44,12 @@
                                 <span>Kirim Raport</span>
                             </a>
                         </li>
+                        <li>
+                            <a href="{{ route('admin.download.raport') }}">
+                                <i data-feather="download" width="20"></i>
+                                <span>Download Raport</span>
+                            </a>
+                        </li>
                     </ul>
                 </li>
             </ul>

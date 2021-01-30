@@ -46,4 +46,17 @@ class SearchController extends Controller
 
         return view('template.panel.kirim_raport', compact('menu','raport'));
     }
+
+    public function downloadRaport(Request $request)
+    {
+        $menu = 'E-Raport';
+        $search = $request->search;
+        $raport = Raport::where('name','like','%'.$search.'%')
+                    ->orWhere('nisn','like','%'.$search.'%')
+                    ->orWhere('classroom','like','%'.$search.'%')
+                    ->orWhere('status','like','%'.$search.'%')
+                    ->paginate(10);
+
+        return view('template.panel.download_raport', compact('menu','raport'));
+    }
 }

@@ -116,4 +116,12 @@ class AdminController extends Controller
 
         return redirect('/panel/admin/kirim-raport')->with('message', 'E-Raport telah terkirim!');
     }
+
+    public function downloadRaport()
+    {
+        $menu = 'E-Raport';
+        $raport = Raport::orderBy('name')->paginate(10);
+
+        return view('template.panel.download_raport', compact('menu','raport'));
+    }
 }

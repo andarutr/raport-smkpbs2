@@ -36,6 +36,8 @@ Route::middleware('auth')->group(function(){
         Route::get('/search-kirim-raport', 'Admin\\SearchController@kirimRaport')->name('admin.search.kirim.raport');
         Route::get('/upload-raport/{id}', 'Admin\\AdminController@uploadRaport')->name('admin.view.upload');
         Route::post('/upload-raport/{id}', 'Admin\\AdminController@kirim_raport')->name('admin.upload.raport');
+        Route::get('/download-raport', 'Admin\\AdminController@downloadRaport')->name('admin.download.raport');
+        Route::get('/search-download-raport', 'Admin\\SearchController@downloadRaport')->name('admin.search.download.raport');
         Route::get('/logout', 'Auth\\AuthController@logout')->name('admin.logout');
     });
 });
