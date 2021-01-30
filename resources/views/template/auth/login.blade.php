@@ -13,6 +13,16 @@ Swal.fire(
 )
 </script>
 @endif
+@if(session('logout'))
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script>
+Swal.fire(
+  'Logout',
+  '{{ session('logout') }}',
+  'success'
+)
+</script>
+@endif
 <div id="auth">
     <div class="container">
         <div class="row">

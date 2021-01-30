@@ -21,9 +21,15 @@ class AuthController extends Controller
 
         if(auth()->attempt(['username' => $req->username, 'password' => $req->password]))
         {
-            return redirect('/panel/admin/dashboard')->with('success', 'Selamat datang admin!');
+            return redirect('/panel/admin/dashboard')->with('welcome', 'Selamat datang admin!');
         }else{
             return redirect()->back()->with('failed', 'Username dan password salah!');
         }
+    }
+
+    public function logout()
+    {
+        auth()->logout();
+        return redirect('/login')->with('logout', 'Anda telah logout!');
     }
 }
